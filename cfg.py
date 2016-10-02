@@ -6,8 +6,10 @@ import time
 
 HOST = "irc.chat.twitch.tv"
 PORT = 6667
-PASS = "oauth:yacesy8zrh5t6uxf0lce8ntrjke153"
-NICK = "posiesenpai"
+#posiesenpai
+#PASS = "oauth:yacesy8zrh5t6uxf0lce8ntrjke153"
+PASS = "oauth:nhhmg2fo8mw8t9d1uaqq8y8xft75aj"
+NICK = "pilbot"
 CHAN = "riotgames"
 
 rusername = "sdhacks"
@@ -49,14 +51,11 @@ while True:
     count = 0;
     for i in submissions:
         if i.stickied == False:
-            send_message("#posiesenpai", str(i).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u"\u201c", "'").replace(u"\u201d", "'"))
-            send_message("#posiesenpai", i.url)
+            send_message("#" + NICK, str(i).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u"\u201c", "'").replace(u"\u201d", "'"))
+            send_message("#" + NICK, i.url)
             count+=1
             time.sleep(20)
         if count == 25:
             break
-
-    time.sleep(300)
-
 
 s.close()
